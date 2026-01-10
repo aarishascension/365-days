@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A beautiful 365-day calendar app with daily notes",
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
