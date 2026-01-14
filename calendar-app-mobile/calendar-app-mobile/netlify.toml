@@ -1,3 +1,4 @@
+# netlify.toml
 [build]
   base = "calendar-app-mobile/calendar-app-mobile/calendar-app-mobile"
   command = "npm install && npm run build"
