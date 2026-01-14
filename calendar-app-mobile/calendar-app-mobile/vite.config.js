@@ -6,6 +6,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    manifest: true
+    // Emit Vite's build manifest under a different filename to avoid
+    // overwriting the app's PWA manifest.json in the public folder.
+    manifest: 'vite-manifest.json'
   }
 })
