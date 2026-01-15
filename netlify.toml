@@ -1,7 +1,7 @@
 # netlify.toml
 [build]
-  command = "npm --prefix calendar-app-mobile/calendar-app-mobile install && npm --prefix calendar-app-mobile/calendar-app-mobile run build"
-  publish = "calendar-app-mobile/calendar-app-mobile/dist"
+  command = "npm --prefix calendar-app-mobile/calendar-app-mobile/calendar-app-mobile install && npm --prefix calendar-app-mobile/calendar-app-mobile/calendar-app-mobile run build"
+  publish = "calendar-app-mobile/calendar-app-mobile/calendar-app-mobile/dist"
 
 [build.environment]
   NODE_VERSION = "18"
