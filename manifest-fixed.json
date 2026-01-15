@@ -1,0 +1,56 @@
+{
+  "name": "365 Days Calendar",
+  "short_name": "365 Days",
+  "description": "Track your year day by day with beautiful daily notes and planning. View dates as 1-365 format with month and year views.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#ff6b35",
+  "orientation": "portrait",
+  "id": "/365-days-calendar/",
+  "categories": ["productivity", "lifestyle", "utilities"],
+
+  "icons": [
+    {
+      "src": "/icons/android/android-launchericon-72-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/android/android-launchericon-96-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/android/android-launchericon-144-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/android/android-launchericon-192-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/android/android-launchericon-512-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/WhatsApp Image 2026-..._imresizer.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "label": "Month view"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

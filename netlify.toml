@@ -6,6 +6,23 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Serve static files directly (don't redirect to index.html)
+[[redirects]]
+  from = "/icons/*"
+  to = "/icons/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/screenshots/*"
+  to = "/screenshots/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+# SPA fallback - only for routes that don't match files
 [[redirects]]
   from = "/*"
   to = "/index.html"
