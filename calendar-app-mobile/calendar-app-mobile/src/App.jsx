@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { initAds } from './adInit'
+import { isAndroidApp, showBannerAd } from './admobBridge'
 
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
@@ -36,10 +36,10 @@ function App() {
       setNotes(JSON.parse(savedNotes));
     }
     
-    // Initialize ads after component mounts
-    setTimeout(() => {
-      initAds();
-    }, 1000);
+    // Show AdMob banner if running in Android app
+    if (isAndroidApp()) {
+      showBannerAd();
+    }
   }, []);
 
   const saveNote = () => {
@@ -210,15 +210,8 @@ function App() {
         </div>
       )}
 
-      {/* Ad Banner */}
-      <div className="ad-container">
-        <ins className="adsbygoogle"
-             style={{ display: 'block' }}
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-             data-ad-slot="XXXXXXXXXX"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-      </div>
+      {/* AdMob Banner Placeholder - Will be injected by Android wrapper */}
+      <div id="admob-banner-container" className="ad-container"></div>
     </div>
   );
 }
