@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import { initAds } from './adInit'
 
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
@@ -34,6 +35,11 @@ function App() {
     if (savedNotes) {
       setNotes(JSON.parse(savedNotes));
     }
+    
+    // Initialize ads after component mounts
+    setTimeout(() => {
+      initAds();
+    }, 1000);
   }, []);
 
   const saveNote = () => {
@@ -203,6 +209,16 @@ function App() {
           </div>
         </div>
       )}
+
+      {/* Ad Banner */}
+      <div className="ad-container">
+        <ins className="adsbygoogle"
+             style={{ display: 'block' }}
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
     </div>
   );
 }
