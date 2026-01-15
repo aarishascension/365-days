@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { isAndroidApp, showBannerAd } from './admobBridge'
+import { isAndroidApp, showBannerAd, showInterstitialAd, loadInterstitialAd } from './admobBridge'
 
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
@@ -39,6 +39,22 @@ function App() {
     // Show AdMob banner if running in Android app
     if (isAndroidApp()) {
       showBannerAd();
+      
+      // Load interstitial ad in advance
+      loadInterstitialAd();
+      
+      // Show interstitial ad on app launch (but not too frequently)
+      const lastInterstitialTime = localStorage.getItem('lastInterstitialTime');
+      const now = Date.now();
+      const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+      
+      // Show interstitial only if it's been more than 1 hour since last one
+      if (!lastInterstitialTime || (now - parseInt(lastInterstitialTime)) > oneHour) {
+        setTimeout(() => {
+          showInterstitialAd();
+          localStorage.setItem('lastInterstitialTime', now.toString());
+        }, 3000); // Wait 3 seconds after app opens
+      }
     }
   }, []);
 
